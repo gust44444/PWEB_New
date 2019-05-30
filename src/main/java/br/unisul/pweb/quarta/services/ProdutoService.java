@@ -20,6 +20,13 @@ public class ProdutoService {
 	@Autowired
 	private CategoriaRepository categoriaRepository;
 	
+	//INSERIR
+	public Produto insert (Produto obj) {
+		obj.setId(null);
+		return repo.save(obj);
+	}
+
+	
 	public Produto find(Integer id) {
 		Optional<Produto> obj = repo.findById(id);
 		return obj.orElse(null);
